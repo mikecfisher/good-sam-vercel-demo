@@ -29,7 +29,9 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --",
     "generate": "pnpm with-env drizzle-kit generate",
-    "migrate": "pnpm with-env drizzle-kit migrate"
+    "migrate": "pnpm with-env drizzle-kit migrate",
+    "db:use": "bash ./scripts/use-db-branch.sh",
+    "db:new": "neon branches create --name $BRANCH && pnpm db:use $BRANCH"
   },
   "dependencies": {
     "@vercel/postgres": "^0.10.0",
