@@ -6,5 +6,5 @@ import * as schema from "./schema";
 export const db = drizzle({
   client: sql,
   schema,
-  casing: "camelCase",
+  // casing: "snake_case",
 });
