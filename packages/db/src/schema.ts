@@ -1,7 +1,10 @@
 import { relations, sql } from "drizzle-orm";
-import { pgTable, primaryKey } from "drizzle-orm/pg-core";
+import { primaryKey, pgTableCreator } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+
+// Create the table creator with a custom naming strategy
+const pgTable = pgTableCreator((name) => `${name}`);
 
 export const Post = pgTable("post", (t) => ({
   id: t.uuid().notNull().primaryKey().defaultRandom(),
