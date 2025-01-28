@@ -27,7 +27,11 @@
     "push": "pnpm with-env drizzle-kit push",
     "studio": "pnpm with-env drizzle-kit studio",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "with-env": "dotenv -e ../../.env --"
+    "with-env": "dotenv -e ../../.env --",
+    "generate": "pnpm with-env drizzle-kit generate",
+    "migrate": "pnpm with-env drizzle-kit migrate",
+    "db:use": "sh -c 'bash ./scripts/use-db-branch.sh \"$0\"'",
+    "db:new": "sh -c 'neonctl branches create --project-id bitter-sky-63813604 --name \"$0\" && pnpm db:use \"$0\"'"
   },
   "dependencies": {
     "@vercel/postgres": "^0.10.0",
